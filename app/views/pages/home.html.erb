@@ -1,0 +1,14 @@
+HELLO this is HOME.html.erb
+
+<% @users.each do |u| %>
+<p><%= u.name %> : <%= u.email %></p>
+
+<% end %>
+
+<% @videos.each do |v| %>
+<p><%= v.name %> : <%= v.description.html_safe %></p>
+<% end %>
+
+<div id="homepage-greet">
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus eligendi assumenda molestiae magni temporibus modi tempore! Temporibus doloribus ex tempore perferendis quasi fuga, voluptatum ad blanditiis repudiandae, sint, ab nobis.</p>
+</div>

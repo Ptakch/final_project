@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>FinalProject</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <link href='https://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
+</head>
+<body>
+	<div id='wrap'>
+
+		<%= image_tag "MK_High_Res.png" %>
+		<ul id='nav'>
+			<li><%= link_to "User Account", users_path %></li>
+			<li><%= link_to "Videos", videos_path %></li> 
+			<li><%= link_to "Home", root_path %></li> 
+			
+			
+				
+			
+			
+		</ul>
+	</div>
+
+	<div id="content">
+		<%= yield %>
+	</div>
+
+</body>
+</html>

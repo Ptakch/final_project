@@ -1,0 +1,14 @@
+This is the Video Index html.erb
+
+<!-- <%# @videos.each do |v| %>
+<p><%#= v.id %> : <%#= v.name %> : <%#= v.description.html_safe %></p>
+<%# end %> -->
+
+<% @all_projects.each do |project| %>
+	<h1><%= project.name %></h1>
+	<p><%= project.hash_id %></p>
+
+	<% project.videos.reverse_each do |video| %>
+		<%= link_to "<p>#{ video.name } : #{ video.description.html_safe }</p>".html_safe, video %>
+	<% end %>
+<% end %>
