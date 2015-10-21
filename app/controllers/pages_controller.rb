@@ -14,5 +14,6 @@ class PagesController < ApplicationController
 
 	@users = User.all
 	@videos = Video.all
+	
 	end
 end

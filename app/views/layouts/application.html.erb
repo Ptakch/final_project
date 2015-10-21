@@ -10,11 +10,27 @@
 <body>
 	<div id='wrap'>
 
-		<%= image_tag "MK_High_Res.png" %>
+		<%= image_tag "MK_High_Res.png", id: "WOO" %>
 		<ul id='nav'>
-			<li><%= link_to "User Account", users_path %></li>
+
+			<% if @current_user.present? %>   
+            
+                <li><%= link_to "Logout #{ @current_user.name }", login_path, :method => 'delete', :data => { :confirm => 'Are you sure you want to logout?' } %></li>
+                <li><%= link_to "Edit Profile", edit_user_path( @current_user ) %></li>     
+            <% else %>
+           
+            	<li><a href="<%= new_user_path %>">Create Account</a></li>
+            	<li><a href="<%= login_path %>">Login</a></li>
+            
+            
+            <% end %>
+			
 			<li><%= link_to "Videos", videos_path %></li> 
 			<li><%= link_to "Home", root_path %></li> 
+			</ul>
+
+			
+			
 			
 			
 				

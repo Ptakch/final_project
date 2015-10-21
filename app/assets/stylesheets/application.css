@@ -16,7 +16,10 @@
  body {
  	font-family: 'PT Sans', sans-serif ;
  	font-weight: 700;
+ 	margin: 0;
+ 	padding: 0;
  }
+
 
  img{
  	width: 250px;
@@ -47,20 +50,51 @@
 
  #content {
  	float: center;
- 	border-color: black;
- 	border-width: 2px;
- 	border-style: solid;
- 	padding: 20px;
+    border-top: 1px solid;
+ 	/*padding: 20px;*/
+ 	margin: 0;
  }
 
 #homepage-greet {
 	margin: auto;
 	padding: 60px;
-	background-color: #BCDBE6;
+	background-color: #BEBEBE;
 	color: black;
 	font-size: 120%;
 	font-family: 'PT Sans', sans-serif;
 	font-weight: 400;
 }
+
+#adminwelcome {
+	padding:20px;
+}
    
+ .homepage-yield {
+ 	padding: 25px;
+ }
+
+ #HPpiano {
+ 	width: 100%;
+ }
    
+ #videoplayer {
+ 	padding: 20px;
+ }
+
+ #disqus_thread {
+	padding: 20px;
+ }
+
+ .homepage-box {
+ 	margin: 30px;
+ 	margin-top: 50px;
+ 	display: inline-block;
+ 	border: solid 1px;
+ 	width: 200px;
+ 	height: 200px;
+ 	background-color: #BEBEBE;
+ }
+
+ #homepage-box1 {
+ 	margin-left: 15%;
+ }

@@ -4,12 +4,22 @@
 
 	<p>
 		<%=  u.label :name %>
-		<%= u.text_field :name %>
+		<%= u.text_field :name, :required => true%>
 	</p>
 
 	<p>
 		<%= u.label :email %>
-		<%= u.text_field :email %>
+		<%= u.text_field :email, :required => true%>
+	</p>
+
+	<p>
+		<%= u.label :password %>
+		<%= u.password_field :password, :required => true%>
+	</p>
+
+	<p>
+		<%= u.label :password_confirmation %>
+		<%= u.password_field :password_confirmation, :required => true%>
 	</p>
 
 	<p>

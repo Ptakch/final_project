@@ -19,6 +19,7 @@ Wistia.use_config!(:wistia => {
 		@video.name = element.name
 		@video.description = element.description
 		@video.embedcode = element.attributes["embedCode"]
+		@video.thumbnail = element.attributes["thumbnail"].url
 		@video.save
 	end
 end
@@ -45,9 +46,9 @@ end
 
 
 
-u1 = User.create :name => "Philbo Baggins", :email => "Phill@baggins.com"
-u2 = User.create :name => "Samwise Gamgee", :email => "Samuel@gamgee.com"
-u3 = User.create :name => "John Usa", :email => "john@usa.com"
+u1 = User.create :name => "Philbo Baggins", :email => "Phill@baggins.com", :password => "chicken", :password_confirmation => "chicken", :admin => false
+u2 = User.create :name => "Samwise Gamgee", :email => "Samuel@gamgee.com", :password => "chicken", :password_confirmation => "chicken"
+u3 = User.create :name => "John Usa", :email => "john@usa.com", :password => "chicken", :password_confirmation => "chicken"
 
 
 

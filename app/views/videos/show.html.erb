@@ -1,7 +1,12 @@
-<h1><%= @video.name %></h1>
 
-<%= @video.embedcode.html_safe %>
-<p><%= @video.description.html_safe %></p>
+
+<div id='videoplayer'>
+	<h1><%= @video.name %></h1>
+	<%= @video.embedcode.html_safe %>
+	<p><%= @video.description.html_safe %></p>
+
+</div>
+
 
 <div id="disqus_thread"></div>
 <script>

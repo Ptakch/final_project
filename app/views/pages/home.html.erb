@@ -1,14 +1,30 @@
-HELLO this is HOME.html.erb
-
-<% @users.each do |u| %>
-<p><%= u.name %> : <%= u.email %></p>
-
+<% unless @current_user.nil? %>
+	<% if @current_user.admin %>
+		<h3 id="adminwelcome">Hello! <strong><%= @current_user.name.upcase %></strong> . You are an Admin!</h3>
+	<% end %>
 <% end %>
 
-<% @videos.each do |v| %>
-<p><%= v.name %> : <%= v.description.html_safe %></p>
-<% end %>
+
+<div class='homepage-yield'>
+
+<%= image_tag 'HomePagePiano.jpg', id: 'HPpiano'%>
+
+
+</div>
 
 <div id="homepage-greet">
 	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus eligendi assumenda molestiae magni temporibus modi tempore! Temporibus doloribus ex tempore perferendis quasi fuga, voluptatum ad blanditiis repudiandae, sint, ab nobis.</p>
 </div>
+
+<div id='homepage-box1' class='homepage-box'>
+	<p>#1</p>
+</div>
+
+<div class='homepage-box'>
+	<p>#2</p>
+</div>
+
+<div class='homepage-box'>
+	<p>#3</p>
+</div>
+
