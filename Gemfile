@@ -27,6 +27,7 @@ gem 'wistia-api'
 gem 'httparty'
 
 gem 'figaro'
+gem 'rails_12factor'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
