@@ -79,6 +79,7 @@
    
  #videoplayer {
  	padding: 20px;
+ 	text-align: center;
  }
 
  #disqus_thread {
@@ -93,8 +94,17 @@
  	width: 200px;
  	height: 200px;
  	background-color: #BEBEBE;
+ 	text-align: center;
+
  }
+
+
 
  #homepage-box1 {
  	margin-left: 15%;
+ }
+
+ #gallery {
+ 	display: inline-block;
+ 	padding: 10px;
  }

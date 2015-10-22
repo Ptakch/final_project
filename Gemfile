@@ -25,6 +25,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'wistia-api'
 gem 'httparty'
+gem 'font-awesome-rails'
 
 gem 'figaro'
 gem 'rails_12factor'

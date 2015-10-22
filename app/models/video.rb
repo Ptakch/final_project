@@ -13,4 +13,5 @@
 
 class Video < ActiveRecord::Base
 	belongs_to :project
+	has_many :views
 end

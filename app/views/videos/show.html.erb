@@ -2,8 +2,12 @@
 
 <div id='videoplayer'>
 	<h1><%= @video.name %></h1>
+	<h3>View Count: <%= @view_count %></h3>
+    <h5>List of Users: <%= @list_of_user_views %></h5>
+    <h6><%= @last_viewed.video_id %></h6>
 	<%= @video.embedcode.html_safe %>
 	<p><%= @video.description.html_safe %></p>
+
 
 </div>
 
@@ -30,3 +34,11 @@
     })();
 </script>
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+<div id='videoplayer'>
+<h2>Check out the next Video : </h2>
+
+<%= link_to "<p>#{ @next_to_view.name } : #{ @next_to_view.description.html_safe }</p>".html_safe, @next_to_view%>
+        <%= link_to( image_tag( @next_to_view.thumbnail ), @next_to_view ) %>
+
+</div>

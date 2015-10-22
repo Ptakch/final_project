@@ -8,9 +8,12 @@
 	<h1><%= project.name %></h1>
 
 	<% project.videos.reverse_each do |video| %>
+	<div id='gallery'>
 		<%= link_to "<p>#{ video.name } : #{ video.description.html_safe }</p>".html_safe, video%>
-		<%= image_tag video.thumbnail %>
+		<%= link_to( image_tag( video.thumbnail ), video ) %>
+	</div>	
 	<% end %>
+
 <% end %>
 
 </div>
