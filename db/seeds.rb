@@ -13,12 +13,13 @@ Wistia.use_config!(:wistia => {
 
 @all_vids = Wistia::Media.find(:all)
 
+
 @all_vids.elements.each do |element|
 	if Video.find_by( :name => element.name ).nil?
 		@video = Video.new
 		@video.name = element.name
 		@video.description = element.description
-		@video.embedcode = element.attributes["embedCode"].gsub('http:', '').gsub('https:', '')
+		@video.embedcode = element.attributes["hashed_id"]
 		@video.thumbnail = element.attributes["thumbnail"].url
 		@video.save
 	end

@@ -9,9 +9,9 @@
         <h6>Viewed Something! <%= @last_viewed.video_id %></h6>
     <% end %>
 
-	<%= @video.embedcode.html_safe %>
 	<p><%= @video.description.html_safe %></p>
 
+    <iframe src="http://fast.wistia.net/embed/iframe/<%= @video.embedcode %>" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" width="640" height="360"></iframe>
 
 </div>
 
