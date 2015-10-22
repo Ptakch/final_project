@@ -18,7 +18,7 @@ Wistia.use_config!(:wistia => {
 		@video = Video.new
 		@video.name = element.name
 		@video.description = element.description
-		@video.embedcode = element.attributes["embedCode"]
+		@video.embedcode = element.attributes["embedCode"].gsub('http:', '').gsub('https:', '')
 		@video.thumbnail = element.attributes["thumbnail"].url
 		@video.save
 	end
