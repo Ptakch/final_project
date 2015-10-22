@@ -23,6 +23,7 @@
 
  img{
  	width: 250px;
+   opacity: 1;
  }
 
 #nav {
@@ -94,6 +95,7 @@
  	width: 200px;
  	height: 200px;
  	background-color: #BEBEBE;
+   line-height: 230px;
  	text-align: center;
 
  }

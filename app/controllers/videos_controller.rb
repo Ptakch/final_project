@@ -8,20 +8,32 @@ class VideosController < ApplicationController
 	def show
 		@video = Video.find(params[:id])
 
-		@view_count = View.where( :video_id => @video.id ).count
-		@list_of_user_views = @video.views.pluck( :user_id )
+		unless View.where( :user_id => @current_user.id ).nil?
 
-		@last_viewed = View.where( :user_id => @current_user.id ).last
+			@view_count = View.where( :video_id => @video.id ).count
+			@list_of_user_views = @video.views.pluck( :user_id )
 
-		@all_video_ids = Video.pluck( :id ).sort
-		@last_view_index = @all_video_ids.index @last_viewed.video_id
+			@last_viewed = View.where( :user_id => @current_user.id ).last
 
-		@next_to_view = @all_video_ids[ @last_view_index + 1 ]
-		@next_to_view = Video.find( @next_to_view )
+			if @last_viewed
 
+				@all_video_ids = Video.pluck( :id ).sort
+				@last_view_index = @all_video_ids.index @last_viewed.video_id
+
+				if @video.id != @all_video_ids.sort.last
+
+					@next_to_view = @all_video_ids[ @last_view_index + 1 ]
+					@next_to_view = Video.find( @next_to_view ) if @next_to_view
+				else
+					@next_to_view = @last_viewed # put in just to see if works.	
+					@next_to_view = Video.find( @next_to_view.video_id )
+			    end
+			end
+
+		end
 
 		# You have watched all videos (line 19)
-		# You have already watched the found video (you could solve this with an each loop)
+		# You have already watched the found video (you could solve this with an)
 
 
 		if @current_user && View.find_by( :user_id => @current_user.id, :video_id => @video.id ).nil?
