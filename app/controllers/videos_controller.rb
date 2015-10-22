@@ -1,6 +1,8 @@
 class VideosController < ApplicationController
 
 	def index
+
+
 		@videos = Video.all
 		@all_projects = Project.all
 	end
@@ -8,6 +10,8 @@ class VideosController < ApplicationController
 	def show
 		@video = Video.find(params[:id])
 
+		redirect_to login_path and return unless @current_user
+		
 		unless View.where( :user_id => @current_user.id ).nil?
 
 			@view_count = View.where( :video_id => @video.id ).count
